@@ -355,10 +355,12 @@
 
 .todolist__title-menu span svg path {
   fill: var(--ModeOne-buttonColor);
+  
 }
 
 .todolist__title-menu span svg circle {
   stroke: var(--ModeOne-buttonColor);
+  stroke-width: 2px;
 }
 
 
