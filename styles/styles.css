@@ -61,6 +61,7 @@
 .main__container,
 .pomodoro__mode,
 .pomodoro__timer,
+.pomodoro__controls-painel,
 .todolist__title {
   display: flex;
   align-items: center;
@@ -321,6 +322,33 @@
     -webkit-box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
   }
+}
+
+.pomodoro__controls-painel {
+  justify-content: center;
+  max-width: 20rem;
+  width: 100%;
+  height: 5.5rem;
+  font-size: clamp(1.8rem, 2vw, 2.6rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 2rem 3.3rem;
+  border: none;
+  background-color: var(--ModeOne-buttonColor);
+  filter: drop-shadow(0px 4px 1px rgba(42, 64, 84, 0.60));
+  border-radius: 9999px;
+  margin: 0 auto;
+  gap: 0 1.6rem;
+}
+
+.pomodoro__controls-painel button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.pomodoro__controls-painel button img {
+  width: 4rem;
 }
 
 .main__line {
