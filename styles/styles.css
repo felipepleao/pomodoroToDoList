@@ -345,11 +345,11 @@
 }
 
 .todolist__title-menu {
+  background: none;
+  border: none;
   position: relative;
   cursor: pointer;
 }
-
-.todolist__title-menu span {}
 
 .todolist__title-menu span svg path {
   fill: var(--ModeOne-buttonColor);
