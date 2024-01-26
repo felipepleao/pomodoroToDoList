@@ -344,18 +344,16 @@
   font-size: 3.2rem;
 }
 
-.todolist__title-menu  {
+.todolist__title-menu {
   position: relative;
   cursor: pointer;
 }
 
-.todolist__title-menu span {
-
-}
+.todolist__title-menu span {}
 
 .todolist__title-menu span svg path {
   fill: var(--ModeOne-buttonColor);
-  
+
 }
 
 .todolist__title-menu span svg circle {
@@ -369,7 +367,8 @@
   padding: 1rem;
   position: absolute;
   right: 0;
-  background-color: var(--ModeOne-buttonColor);;
+  background-color: var(--ModeOne-buttonColor);
+  ;
   border: 2px solid #333;
 }
 
@@ -382,9 +381,23 @@
   color: #FFF;
 }
 
-.todolist__title-menu:hover .todolist__title-menu-drop {
+.todolist__title-menu:hover .todolist__title-menu-drop,
+.todolist__title-menu.active .todolist__title-menu-drop {
   display: grid;
   gap: 2rem 0;
+  animation: show-up .3s;
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 
