@@ -1,11 +1,17 @@
 export default function timerCountdown() {
   const startBtn = document.querySelector(".pomodoro__controls-start");
   const timerDisplay = document.querySelector(".pomodoro__timer-display");
-  let tempoDecorrido = 5;
-  let count = 0;
+  const modeTime = document.querySelectorAll(".pomodoro__mode-title");
+  const modePomodoro = document.querySelector(".modePomodoro");
+  const modeShort = document.querySelector(".modeShort");
+  const modeLong = document.querySelector(".modeLong");
+
+  let tempoDecorrido = 2;
+  let countShort = 1;
+  let countLong = 1;
   let timerCount = null;
 
-  function showTimer() {
+  function showTimer(timeMode) {
     const time = new Date(tempoDecorrido * 1000);
     const formatTime = time.toLocaleTimeString("pt-Br", {
       minute: "2-digit",
@@ -14,28 +20,74 @@ export default function timerCountdown() {
     timerDisplay.innerHTML = `${formatTime}`;
   }
 
+  function modeChange(modeSelect) {
+    modeTime.forEach((mode) => {
+      mode.classList.add("disabled");
+    });
+    modeSelect.classList.remove("disabled");
+  }
+
   showTimer();
+
+  function pomodoroTime() {
+    tempoDecorrido = 2;
+  }
+
+  function shortTime() {
+    tempoDecorrido = 3;
+  }
+
+  function longTime() {
+    tempoDecorrido = 4;
+  }
 
   function countdown() {
     timerCount = setInterval(() => {
       --tempoDecorrido;
-      console.log(tempoDecorrido);
       showTimer();
 
       if (tempoDecorrido == 0) {
         clearInterval(timerCount);
-
-        setTimeout(() => {
-          tempoDecorrido = 300;
-          showTimer();
-        }, 1000);
-        count++;
+        isPomodoro();
+        isShort();
+        isLong();
       }
-      console.log(count);
     }, 1000);
   }
 
+  function isPomodoro() {
+    if (countShort == 0) {
+      setTimeout(() => {
+        pomodoroTime();
+        modeChange(modePomodoro);
+        countLong++;
+        countShort++;
+        showTimer();
+      }, 1000);
+    }
+  }
 
+  function isShort() {
+    if (countShort == 1) {
+      setTimeout(() => {
+        shortTime();
+        modeChange(modeShort);
+        countShort = 0;
+        showTimer();
+      }, 1000);
+    }
+  }
+
+  function isLong() {
+    if (countLong == 3) {
+      setTimeout(() => {
+        longTime();
+        modeChange(modeLong);
+        countLong = 0;
+        showTimer();
+      }, 1000);
+    }
+  }
 
   startBtn.addEventListener("click", countdown);
 }
