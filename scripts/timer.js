@@ -6,7 +6,7 @@ export default function timerCountdown() {
   const modeShort = document.querySelector(".modeShort");
   const modeLong = document.querySelector(".modeLong");
 
-  let tempoDecorrido = 2;
+  let tempoDecorrido = 1500;
   let countShort = 1;
   let countLong = 1;
   let timerCount = null;
@@ -30,15 +30,15 @@ export default function timerCountdown() {
   showTimer();
 
   function pomodoroTime() {
-    tempoDecorrido = 2;
+    tempoDecorrido = 1500;
   }
 
   function shortTime() {
-    tempoDecorrido = 3;
+    tempoDecorrido = 300;
   }
 
   function longTime() {
-    tempoDecorrido = 4;
+    tempoDecorrido = 900;
   }
 
   function countdown() {
