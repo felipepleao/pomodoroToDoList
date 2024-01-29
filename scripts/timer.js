@@ -1,12 +1,17 @@
 export default function timerCountdown() {
   const startBtn = document.querySelector(".pomodoro__controls-start");
+  const displayBtns = document.querySelector(".pomodoro__controls-painel");
+  const playAndPause = document.querySelector(".btnPlayAndPause");
+  const stopBtn = document.querySelector(".btnStop");
+  const soundOnAndOff = document.querySelector(".soundOn");
+
   const timerDisplay = document.querySelector(".pomodoro__timer-display");
   const modeTime = document.querySelectorAll(".pomodoro__mode-title");
   const modePomodoro = document.querySelector(".modePomodoro");
   const modeShort = document.querySelector(".modeShort");
   const modeLong = document.querySelector(".modeLong");
 
-  let tempoDecorrido = 1500;
+  let tempoDecorrido = 2;
   let countShort = 1;
   let countLong = 1;
   let timerCount = null;
@@ -30,15 +35,15 @@ export default function timerCountdown() {
   showTimer();
 
   function pomodoroTime() {
-    tempoDecorrido = 1500;
+    tempoDecorrido = 2;
   }
 
   function shortTime() {
-    tempoDecorrido = 300;
+    tempoDecorrido = 3;
   }
 
   function longTime() {
-    tempoDecorrido = 900;
+    tempoDecorrido = 1;
   }
 
   function countdown() {
@@ -89,5 +94,17 @@ export default function timerCountdown() {
     }
   }
 
-  startBtn.addEventListener("click", countdown);
+  function changeDisplayButtons() {
+    startBtn.classList.add("hidden");
+    displayBtns.classList.remove("hidden");
+  }
+
+  function playAndPauseTimer() {}
+
+  function stopTimer() {}
+
+  startBtn.addEventListener("click", () => {
+    changeDisplayButtons();
+    countdown();
+  });
 }
