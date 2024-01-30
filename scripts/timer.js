@@ -7,6 +7,11 @@ export default function timerCountdown() {
   const soundOnBtn = document.querySelector(".btnSoundOn");
   const soundOffBtn = document.querySelector(".btnSoundOff");
 
+  const soundClick = new Audio("../assets/sounds/click.mp3");
+  const soundStart = new Audio("../assets/sounds/start.mp3");
+  const soundMusic = new Audio("../assets/sounds/lofi.mp3");
+  soundMusic.loop = true;
+
   const timerDisplay = document.querySelector(".pomodoro__timer-display");
   const modeTime = document.querySelectorAll(".pomodoro__mode-title");
   const modePomodoro = document.querySelector(".modePomodoro");
@@ -130,28 +135,31 @@ export default function timerCountdown() {
     element2.classList.toggle("hidden");
   }
 
-  function stopTimer() {}
-
   // eventos
 
   startBtn.addEventListener("click", () => {
     changeDisplayButtons();
     countdown();
+    soundStart.play();
+    soundMusic.play();
   });
 
   playBtn.addEventListener("click", () => {
     showAndHiddenBtn(pauseBtn, playBtn);
     countdown();
+    soundClick.play();
   });
 
   pauseBtn.addEventListener("click", () => {
     showAndHiddenBtn(pauseBtn, playBtn);
     clearInterval(timerCount);
+    soundClick.play();
   });
 
   stopBtn.addEventListener("click", () => {
+    soundClick.play();
     clearInterval(timerCount);
-    resetDisplay(playBtn, pauseBtn);
+   
     if (pomodoroOn) {
       pomodoroTime();
     } else if (shortOn) {
@@ -160,13 +168,21 @@ export default function timerCountdown() {
       longTime();
     }
     showTimer();
+
+    soundMusic.currentTime = 0;
+    soundMusic.pause();
+    
+    resetDisplay(pauseBtn, playBtn);
+    changeDisplayButtons();
   });
 
   soundOnBtn.addEventListener("click", () => {
     showAndHiddenBtn(soundOnBtn, soundOffBtn);
+    soundMusic.pause();
   });
 
   soundOffBtn.addEventListener("click", () => {
     showAndHiddenBtn(soundOnBtn, soundOffBtn);
+    soundMusic.play();
   });
 }
