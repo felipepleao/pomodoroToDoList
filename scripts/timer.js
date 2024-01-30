@@ -9,6 +9,7 @@ export default function timerCountdown() {
 
   const soundClick = new Audio("../assets/sounds/click.mp3");
   const soundStart = new Audio("../assets/sounds/start.mp3");
+  const soundComplete = new Audio("../assets/sounds/complete.mp3");
   const soundMusic = new Audio("../assets/sounds/lofi.mp3");
   soundMusic.loop = true;
 
@@ -55,7 +56,7 @@ export default function timerCountdown() {
   }
 
   function longTime() {
-    tempoDecorrido = 1;
+    tempoDecorrido = 900;
   }
 
   function countdown() {
@@ -70,6 +71,9 @@ export default function timerCountdown() {
           resetDisplay(pauseBtn, playBtn);
         }, 1000);
 
+        soundMusic.currentTime = 0;
+        soundMusic.pause();
+        soundComplete.play();
         isPomodoro();
         isShort();
         isLong();
@@ -159,7 +163,7 @@ export default function timerCountdown() {
   stopBtn.addEventListener("click", () => {
     soundClick.play();
     clearInterval(timerCount);
-   
+
     if (pomodoroOn) {
       pomodoroTime();
     } else if (shortOn) {
@@ -171,7 +175,7 @@ export default function timerCountdown() {
 
     soundMusic.currentTime = 0;
     soundMusic.pause();
-    
+
     resetDisplay(pauseBtn, playBtn);
     changeDisplayButtons();
   });
