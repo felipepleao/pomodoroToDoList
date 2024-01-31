@@ -12,6 +12,7 @@
   font-weight: 700;
 
   --ModeOne-background: #908C88;
+  --ModeOne-backgroundPaper: #DBDBDB;
   --ModeOne-lineList: #B0B0B0;
   --ModeOne-buttonColor: #CF6B3F;
   --ModeOne-textColor: #28232D;
@@ -19,12 +20,14 @@
   --ModeOne-buttonColorTwo: #7A4132;
 
   --ModeTwo-background: red;
+  --ModeOne-backgroundPaper: #DBDBDB;
   --ModeTwo-lineList: #B0B0B0;
   --ModeTwo-buttonColor: #CF6B3F;
   --ModeTwo-textColor: #28232D;
   --ModeTwo-buttonColorTwo: #7A4132;
 
   --ModeThree-background: yellow;
+  --ModeOne-backgroundPaper: #DBDBDB;
   --ModeThree-lineList: #B0B0B0;
   --ModeThree-buttonColor: #CF6B3F;
   --ModeThree-textColor: #28232D;
@@ -365,6 +368,8 @@
   background-color: var(--ModeOne-line);
 }
 
+/* todoList */
+
 .todolist {
   max-width: 50rem;
   width: 100%;
@@ -373,6 +378,7 @@
 .todolist__title {
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 .todolist__title h2 {
@@ -395,7 +401,6 @@
   stroke: var(--ModeOne-buttonColor);
   stroke-width: 2px;
 }
-
 
 .todolist__title-menu-drop {
   display: none;
@@ -433,6 +438,13 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
+
+.todolist__paper {
+  background-color: var(--ModeOne-backgroundPaper);
+  width: 100%;
+  min-height: 30rem;
+  border-radius: 5px;
 }
 
 
