@@ -447,6 +447,21 @@
   border-radius: 5px;
 }
 
+.todolist__paper-task {
+  display: grid;
+  width: 50rem;
+  gap: 8px;
+}
+
+.todolist__paper-task-post {
+  max-width: 40rem;
+  width: 100%;
+  background-color: yellow;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  padding: 1.6rem;
+  height: 6.4rem;
+}
 
 @media (max-width: 920px) {
   .main__container {
