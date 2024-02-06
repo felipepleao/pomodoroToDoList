@@ -371,7 +371,7 @@
 /* todoList */
 
 .todolist {
-  max-width: 50rem;
+  max-width: 40rem;
   width: 100%;
 }
 
@@ -443,14 +443,14 @@
 .todolist__paper {
   background-color: var(--ModeOne-backgroundPaper);
   width: 100%;
-  min-height: 30rem;
+  height: 40rem;
   border-radius: 5px;
+  overflow: scroll;
 }
 
 .todolist__paper-task {
-  display: grid;
   width: 50rem;
-  gap: 8px;
+  
 }
 
 .todolist__paper-task-post {
