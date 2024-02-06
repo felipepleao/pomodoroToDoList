@@ -394,7 +394,6 @@
 
 .todolist__title-menu span svg path {
   fill: var(--ModeOne-buttonColor);
-
 }
 
 .todolist__title-menu span svg circle {
@@ -408,7 +407,6 @@
   position: absolute;
   right: 0;
   background-color: var(--ModeOne-buttonColor);
-  ;
   border: 2px solid #333;
 }
 
@@ -445,18 +443,12 @@
   width: 100%;
   height: 40rem;
   border-radius: 5px;
-  overflow: scroll;
-}
-
-.todolist__paper-task {
-  width: 50rem;
-  
+  overflow-y: scroll;
 }
 
 .todolist__paper-task-post {
-  margin-left: 1.7rem;
-  max-width: 40rem;
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
   font-size: 1.6rem;
   padding: 1.6rem 0;
   height: 5.4rem;
@@ -464,7 +456,9 @@
 }
 
 @media (max-width: 920px) {
+
   .main__container {
+    height: 90vh;
     padding-top: 8rem;
     flex-direction: column;
     justify-content: start;
@@ -477,6 +471,22 @@
     border-radius: 5px;
     background-color: var(--ModeOne-line);
   }
+
+  .todolist__paper {
+    height: 20rem;
+  }
+
+
+  /* .todolist__paper-task-post {
+    margin-left: 1.7rem;
+    max-width: 40rem;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1.6rem 0;
+    height: 5.4rem;
+    border-bottom: 1px solid #B0B0B0;
+  } */
+
 }
 
 @media (max-width: 500px) {
