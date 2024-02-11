@@ -370,6 +370,7 @@
 /* todoList */
 
 .todolist {
+  /* padding: 0 2rem; */
   max-width: 40rem;
   width: 100%;
 }
@@ -420,7 +421,7 @@
 }
 
 .todolist__title-menu-drop li:hover {
-  color: #FFF;
+  /* color: #FFF; */
 }
 
 .todolist__title-menu:hover .todolist__title-menu-drop,
@@ -479,7 +480,6 @@
     height: 20rem;
   }
 
-
   /* .todolist__paper-task-post {
     margin-left: 1.7rem;
     max-width: 40rem;
@@ -505,4 +505,9 @@
     width: 100%;
     text-align: center;
   }
+
+  .todolist {
+    padding: 0 2rem;
+  }
+
 }
