@@ -421,7 +421,7 @@
 }
 
 .todolist__title-menu-drop li:hover {
-  /* color: #FFF; */
+  color: #FFF;
 }
 
 .todolist__title-menu:hover .todolist__title-menu-drop,
