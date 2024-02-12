@@ -411,7 +411,7 @@
   position: absolute;
   right: 0;
   background-color: var(--ModeOne-buttonColor);
-  border: 2px solid #333;
+  /* border: 2px solid #333; */
 }
 
 .todolist__title-menu-drop li {
