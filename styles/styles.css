@@ -448,7 +448,40 @@
   width: 100%;
   height: 40rem;
   border-radius: 5px;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+.todolist__title-create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.3rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--ModeOne-buttonColorTwo);
+}
+
+.todolist__title-create input {
+  background: none;
+  border: none;
+  width: 80%;
+}
+
+.todolist__title-create input::placeholder {
+  color: var(--ModeOne-textColor);
+  font-size: 1.6rem;
+}
+
+.todolist__title-create input:focus {
+  outline: none;
+}
+
+.todolist__title-create button {
+  background: none;
+  padding: .5rem;
+  background-color: var(--ModeOne-buttonColorTwo);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 .todolist__paper-task-post {
