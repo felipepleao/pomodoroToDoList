@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-background="lofiOne">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,13 +13,28 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="scripts/main.js" defer type="module"></script>
   </head>
-  <body data-background="lofiTwo" class="background__image">
+  <body class="background__image">
     <main id="main" class="main__container">
       <div class="main__container-backgrounds">
         <h4>Backgrounds</h4>
-        <button class="main__container-backgrounds-mode active">Modo1</button>
-        <button class="main__container-backgrounds-mode">Modo2</button>
-        <button class="main__container-backgrounds-mode">Modo3</button>
+        <button
+          data-background="lofiOne"
+          class="main__container-backgrounds-mode active"
+        >
+          Modo1
+        </button>
+        <button
+          data-background="lofiTwo"
+          class="main__container-backgrounds-mode"
+        >
+          Modo2
+        </button>
+        <button
+          data-background="lofiThree"
+          class="main__container-backgrounds-mode"
+        >
+          Modo3
+        </button>
       </div>
 
       <section class="pomodoro">
@@ -118,9 +133,7 @@
         </form>
 
         <div class="todolist__paper">
-          <ul class="todolist__paper-task">
-            
-          </ul>
+          <ul class="todolist__paper-task"></ul>
         </div>
       </section>
     </main>
