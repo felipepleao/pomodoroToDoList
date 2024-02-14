@@ -6,9 +6,4 @@ import todoCrud from "./todolist-crud.js";
 varietyBackground();
 menuDropdown();
 timerCountdown();
-
-// var mainContainer = document.querySelector(".main__container");
-
-// mainContainer.addEventListener("click", () => {
-//   mainContainer.style.backgroundColor = "var(--ModeTwo-background)";
-// });
+todoCrud();
