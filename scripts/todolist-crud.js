@@ -6,6 +6,10 @@ export default function todoCrud() {
   //se a pág ja tiver um dado salvo no array ele irá carrega-lo
   //caso nao tenha ele irá criar um array tasks vazio
 
+  function attTasks() {
+    localStorage.setItem("todoTask", JSON.stringify(tasks));
+  }
+
   function createTaskElement(task) {
     const li = document.createElement("li");
     li.classList.add("todolist__paper-task-post");
@@ -26,6 +30,16 @@ export default function todoCrud() {
     imageButton.setAttribute("src", "assets/pen.svg");
     editButton.append(imageButton);
 
+    editButton.onclick = () => {
+      const newDescription = prompt("Qual é o novo nome da tarefa?");
+      console.log(newDescription);
+      if (newDescription) {
+        paragraph.textContent = newDescription;
+        task.description = newDescription;
+        attTasks();
+      }
+    };
+
     li.append(input);
     li.append(paragraph);
     li.append(editButton);
@@ -42,8 +56,8 @@ export default function todoCrud() {
     tasks.push(task);
     const elementTask = createTaskElement(task);
     ulTodolistTask.append(elementTask);
-    localStorage.setItem("todoTask", JSON.stringify(tasks));
-    inputText.value = ''
+    attTasks();
+    inputText.value = "";
     console.log(tasks);
   });
 
