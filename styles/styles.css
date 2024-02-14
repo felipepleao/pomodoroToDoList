@@ -10,30 +10,6 @@
 :root {
   font-size: 62.5%;
   font-weight: 700;
-
-  /* --ModeOne-background: #908C88;
-  --ModeOne-backgroundPaper: #DBDBDB;
-  --ModeOne-lineList: #B0B0B0;
-  --ModeOne-buttonColor: #CF6B3F;
-  --ModeOne-textColor: #28232D;
-  --ModeOne-line: #28232D;
-  --ModeOne-buttonColorTwo: #7A4132; */
-
-  /* --ModeTwo-background: red;
-  --ModeOne-backgroundPaper: #DBDBDB;
-  --ModeTwo-lineList: #B0B0B0;
-  --ModeTwo-buttonColor: #CF6B3F;
-  --ModeTwo-textColor: #28232D;
-  --ModeTwo-buttonColorTwo: #7A4132; */
-
-  /* --ModeThree-background: yellow;
-  --ModeOne-backgroundPaper: #DBDBDB;
-  --ModeThree-lineList: #B0B0B0;
-  --ModeThree-buttonColor: #CF6B3F;
-  --ModeThree-textColor: #28232D;
-  --ModeThree-buttonColorTwo: #7A4132; */
-
-  --current-mode: ModeOne;
 }
 
 [data-background="lofiOne"] {
@@ -49,25 +25,27 @@
 }
 
 [data-background="lofiTwo"] {
-  background: url(../assets/lofi.jpg) no-repeat center;
+  background: url(../assets/lofi1.jpg) no-repeat;
 
-  --Mode-background: red;
+  --Mode-background: #8bcae7;
   --Mode-backgroundPaper: #DBDBDB;
   --Mode-lineList: #B0B0B0;
-  --Mode-buttonColor: #CF6B3F;
-  --Mode-textColor: #28232D;
-  --Mode-buttonColorTwo: #7A4132;
+  --Mode-buttonColor: #e3aac6;
+  --Mode-textColor: #1d66a2;
+  --Mode-line: #1d66a2;
+  --Mode-buttonColorTwo: #e3aac6;
 }
 
 [data-background="lofiThree"] {
-  background: url(../assets/lof2.jpg) no-repeat;
+  background: url(../assets/lofi2.jpg) no-repeat center;
 
-  --Mode-background: yellow;
+  --Mode-background: #7d5f48;
   --Mode-backgroundPaper: #DBDBDB;
   --Mode-lineList: #B0B0B0;
-  --Mode-buttonColor: #CF6B3F;
-  --Mode-textColor: #28232D;
-  --Mode-buttonColorTwo: #7A4132;
+  --Mode-buttonColor: #cbae5d;
+  --Mode-textColor: #333131;
+  --Mode-line: #333131;
+  --Mode-buttonColorTwo: #cbae5d;
 }
 
 .background__image {
@@ -135,7 +113,7 @@
 }
 
 .main__container-backgrounds-mode.active {
-  background-color: var(--ModeThree-buttonColorTwo);
+  background-color: var(--Mode-buttonColorTwo);
   color: var(--Mode-lineList);
 }
 
