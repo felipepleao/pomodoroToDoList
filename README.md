@@ -8,12 +8,12 @@ Este projeto tem como objetivo acompanhar a gestão do tempo por meio da técnic
 
 ## Deploy
 
-[LINK]().
+[LINK](https://pomodoro-todo-gamma.vercel.app/).
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](./assets/pomodoro.png)
 
 ## Gif
 
-![App Screenshot]()
+![App Screenshot](./assets/projectgifgif.gif)
