@@ -54,7 +54,6 @@ export default function todoCrud() {
 
     editButton.onclick = () => {
       const newDescription = prompt("Qual é o novo nome da tarefa?");
-      console.log(newDescription);
       if (newDescription) {
         paragraph.textContent = newDescription;
         task.description = newDescription;
@@ -76,12 +75,13 @@ export default function todoCrud() {
       completed: false,
     };
 
-    tasks.push(task);
-    const elementTask = createTaskElement(task);
-    ulTodolistTask.append(elementTask);
-    attTasks();
-    inputText.value = "";
-    console.log(tasks);
+    if (task.description) {
+      tasks.push(task);
+      const elementTask = createTaskElement(task);
+      ulTodolistTask.append(elementTask);
+      attTasks();
+      inputText.value = "";
+    }
   });
 
   tasks.forEach((task) => {
