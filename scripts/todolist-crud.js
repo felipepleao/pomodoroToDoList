@@ -95,23 +95,42 @@ export default function todoCrud() {
     ulTodolistTask.append(elementTask);
   });
 
-  removeTaskComplete.addEventListener("click", () => {
-    const seletor = document.querySelectorAll(
-      ".todolist__paper-task-post.active"
-    );
-    seletor.forEach((task) => {
+  function removeTasks(taskComplete) {
+    const seletor = taskComplete
+      ? ".todolist__paper-task-post.active"
+      : ".todolist__paper-task-post";
+
+    document.querySelectorAll(seletor).forEach((task) => {
       task.remove();
     });
-    tasks = tasks.filter((task) => !task.completed);
+    tasks = taskComplete ? tasks.filter((task) => !task.completed) : [];
     attTasks();
+  }
+
+  removeTaskComplete.addEventListener("click", () => {
+    removeTasks(true);
+  });
+  removeAllTasks.addEventListener("click", () => {
+    removeTasks(false);
   });
 
-  removeAllTasks.addEventListener("click", () => {
-    const seletor = document.querySelectorAll(".todolist__paper-task-post");
-    seletor.forEach((task) => {
-      task.remove();
-    });
-    tasks = [];
-    attTasks();
-  });
+  // removeTaskComplete.addEventListener("click", () => {
+  //   const seletor = document.querySelectorAll(
+  //     ".todolist__paper-task-post.active"
+  //   );
+  //   seletor.forEach((task) => {
+  //     task.remove();
+  //   });
+  //   tasks = tasks.filter((task) => !task.completed);
+  //   attTasks();
+  // });
+
+  // removeAllTasks.addEventListener("click", () => {
+  //   const seletor = document.querySelectorAll(".todolist__paper-task-post");
+  //   seletor.forEach((task) => {
+  //     task.remove();
+  //   });
+  //   tasks = [];
+  //   attTasks();
+  // });
 }
