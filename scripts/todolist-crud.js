@@ -2,9 +2,15 @@ export default function todoCrud() {
   const formAddTask = document.querySelector(".todolist__title-create");
   const ulTodolistTask = document.querySelector(".todolist__paper-task");
   const inputText = document.querySelector(".todolist__title-create-input");
-  const tasks = JSON.parse(localStorage.getItem("todoTask")) || [];
+  let tasks = JSON.parse(localStorage.getItem("todoTask")) || [];
   //se a pág ja tiver um dado salvo no array ele irá carrega-lo
   //caso nao tenha ele irá criar um array tasks vazio
+  const removeTaskComplete = document.querySelector(
+    ".todolist__title-menu-drop-remove-taskComplete"
+  );
+  const removeAllTasks = document.querySelector(
+    ".todolist__title-menu-drop-remove-allTasks"
+  );
 
   function attTasks() {
     localStorage.setItem("todoTask", JSON.stringify(tasks));
@@ -87,5 +93,25 @@ export default function todoCrud() {
   tasks.forEach((task) => {
     const elementTask = createTaskElement(task);
     ulTodolistTask.append(elementTask);
+  });
+
+  removeTaskComplete.addEventListener("click", () => {
+    const seletor = document.querySelectorAll(
+      ".todolist__paper-task-post.active"
+    );
+    seletor.forEach((task) => {
+      task.remove();
+    });
+    tasks = tasks.filter((task) => !task.completed);
+    attTasks();
+  });
+
+  removeAllTasks.addEventListener("click", () => {
+    const seletor = document.querySelectorAll(".todolist__paper-task-post");
+    seletor.forEach((task) => {
+      task.remove();
+    });
+    tasks = [];
+    attTasks();
   });
 }
