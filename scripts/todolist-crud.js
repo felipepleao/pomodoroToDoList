@@ -20,6 +20,28 @@ export default function todoCrud() {
     input.setAttribute("id", "checkbox");
     input.setAttribute("name", "taskChecked");
 
+    input.addEventListener("change", function (event) {
+      const isChecked = event.target.checked;
+      if (event.target.checked) {
+        li.classList.add("active");
+        task.completed = isChecked;
+
+        attTasks();
+      } else {
+        li.classList.remove("active");
+        task.completed = isChecked;
+        attTasks();
+      }
+    });
+
+    if (task.completed) {
+      li.classList.add("active");
+      input.checked = true;
+    } else {
+      li.classList.remove("active");
+      input.checked = false;
+    }
+
     const paragraph = document.createElement("p");
     paragraph.classList.add("todolist__paper-item-description");
     paragraph.textContent = task.description;
@@ -51,6 +73,7 @@ export default function todoCrud() {
     event.preventDefault();
     const task = {
       description: inputText.value,
+      completed: false,
     };
 
     tasks.push(task);

@@ -14,7 +14,7 @@
 
 [data-background="lofiOne"] {
   background: url(../assets/lofi.jpg) no-repeat;
-
+  background-size: cover;
   --Mode-background: #908C88;
   --Mode-backgroundPaper: #DBDBDB;
   --Mode-lineList: #B0B0B0;
@@ -22,11 +22,12 @@
   --Mode-textColor: #28232D;
   --Mode-line: #28232D;
   --Mode-buttonColorTwo: #7A4132;
+  --Mode-completeTask: #2e5c8c;
 }
 
 [data-background="lofiTwo"] {
-  background: url(../assets/lofi1.jpg) no-repeat;
-
+  background: url(../assets/lofi1.jpg) no-repeat ;
+  background-size: cover;
   --Mode-background: #8bcae7;
   --Mode-backgroundPaper: #DBDBDB;
   --Mode-lineList: #B0B0B0;
@@ -34,11 +35,12 @@
   --Mode-textColor: #1d66a2;
   --Mode-line: #1d66a2;
   --Mode-buttonColorTwo: #e3aac6;
+  --Mode-completeTask: #8e8cb9;
 }
 
 [data-background="lofiThree"] {
   background: url(../assets/lofi2.jpg) no-repeat center;
-
+  background-size: cover;
   --Mode-background: #7d5f48;
   --Mode-backgroundPaper: #DBDBDB;
   --Mode-lineList: #B0B0B0;
@@ -46,6 +48,7 @@
   --Mode-textColor: #333131;
   --Mode-line: #333131;
   --Mode-buttonColorTwo: #cbae5d;
+  --Mode-completeTask: #7fa99b;
 }
 
 .background__image {
@@ -491,20 +494,24 @@
 }
 
 .todolist__paper-task-post {
-  /* background-color: lightgreen; */
-  
+
   border-radius: 5px;
   margin: 0 auto;
   width: 90%;
-  
+
   padding: 1.6rem .5rem;
   height: 5.4rem;
   border-bottom: 1px solid #B0B0B0;
-  
+
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.todolist__paper-task-post.active {
+  background-color: var(--Mode-completeTask);
+  text-decoration: line-through;
 }
 
 .todolist__paper-checked {
